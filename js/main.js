@@ -33,19 +33,29 @@ window.KALANCH_CONFIG = KALANCH_CONFIG;
 const NAV_ITEMS = [
   { label: "Home", href: "index.html", key: "home" },
   {
-    label: "Study Destinations", key: "destinations",
+    label: "Destinations", key: "destinations",
     children: [
       { label: "Study in Malaysia", href: "malaysia.html", desc: "Our primary destination" },
       { label: "Study in Cyprus", href: "cyprus.html", desc: "European study opportunities" }
     ]
   },
-  { label: "Universities & Colleges", href: "universities.html", key: "universities" },
-  { label: "Programs", href: "programs.html", key: "programs" },
-  { label: "Our Services", href: "services.html", key: "services" },
-  { label: "Student Resources", href: "resources.html", key: "resources" },
-  { label: "About Us", href: "about.html", key: "about" },
-  { label: "Success Stories", href: "success-stories.html", key: "success" },
-  { label: "Contact Us", href: "contact.html", key: "contact" }
+  {
+    label: "Academics", key: "academics", keys: ["universities","programs"],
+    children: [
+      { label: "Universities & Colleges", href: "universities.html", desc: "Browse partner institutions" },
+      { label: "Programs", href: "programs.html", desc: "Find the right course for you" }
+    ]
+  },
+  { label: "Services", href: "services.html", key: "services" },
+  { label: "Resources", href: "resources.html", key: "resources" },
+  {
+    label: "About", key: "about", keys: ["about","success"],
+    children: [
+      { label: "About Us", href: "about.html", desc: "Our story and mission" },
+      { label: "Success Stories", href: "success-stories.html", desc: "Students who made it" }
+    ]
+  },
+  { label: "Contact", href: "contact.html", key: "contact" }
 ];
 
 const ICONS = {
@@ -69,7 +79,7 @@ function buildHeader(){
   const current = document.body.getAttribute("data-page") || "";
 
   const navHTML = NAV_ITEMS.map(item => {
-    const isActive = item.key === current;
+    const isActive = item.key === current || (item.keys && item.keys.includes(current));
     if(item.children){
       return `<li class="${isActive ? 'active' : ''}">
         <button type="button">${item.label} ${ICONS.chevron}</button>
