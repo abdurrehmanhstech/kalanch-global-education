@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universities & Colleges | Kalanch Global Education</title>
+<meta name="description" content="Explore universities and colleges in Malaysia and Cyprus that Kalanch Global Education can guide you toward.">
+<link rel="icon" type="image/jpeg" href="assets/images/logos/kalanch-logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="universities">
+
+<div id="site-header"></div>
+
+<div class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Universities & Colleges</span></div>
+    <h1>Universities & Colleges</h1>
+    <p>Explore the universities and colleges we guide students toward. Select a country below, then open any profile for study areas and levels offered.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="pill-row" id="uniFilters" style="margin-bottom:40px">
+      <button class="pill active" data-value="all">All Destinations</button>
+      <button class="pill" data-value="Malaysia">Malaysia</button>
+      <button class="pill" data-value="Cyprus">Cyprus</button>
+    </div>
+    <div class="grid-3" id="uniGrid"></div>
+  </div>
+</section>
+
+<section class="section-tight" style="background:var(--paper-soft)">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h3>Can't find the right university listed?</h3>
+        <p>Our network extends beyond this directory. Talk to our team about your specific goals.</p>
+      </div>
+      <div class="btn-row">
+        <a href="#" id="uniWaCta" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/main.js"></script>
+<script src="js/universities.js"></script>
+<script>
+  document.getElementById("uniWaCta").href = waLink("Hi Kalanch Global Education, I'd like guidance finding a university that fits my goals.");
+</script>
+</body>
+</html>

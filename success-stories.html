@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Success Stories | Kalanch Global Education</title>
+<meta name="description" content="Real student success stories will be featured here as they are shared with us.">
+<link rel="icon" type="image/jpeg" href="assets/images/logos/kalanch-logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="success">
+
+<div id="site-header"></div>
+
+<div class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Success Stories</span></div>
+    <h1>Student Success Stories</h1>
+    <p>Real stories from real students, shared with their permission. This section grows as our students settle into their new universities.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <!--
+      CMS-READY STRUCTURE — add a card per story with this shape:
+      { photo, name, previousQualification, university, program, destination, testimonial }
+      No entries are shown yet — this array intentionally starts empty
+      rather than using invented students or quotes.
+    -->
+    <div id="storiesGrid" class="grid-3"></div>
+    <div class="empty-state" id="storiesEmpty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <p>We're gathering our first student success stories. Real experiences from real students will be featured here soon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="background:var(--paper-soft)">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h3>Studying abroad through Kalanch?</h3>
+        <p>We'd love to feature your story here once you've settled into your new university.</p>
+      </div>
+      <div class="btn-row">
+        <a href="#" id="storyWaCta" target="_blank" rel="noopener" class="btn btn-whatsapp">Share Your Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/main.js"></script>
+<script>
+  // Add real, verified stories here — each renders as a card automatically.
+  const SUCCESS_STORIES = [];
+
+  function storyCardHTML(s){
+    return `<div class="uni-card reveal">
+      <div class="uni-card-top">
+        <div class="uni-badge">${(s.name||"").split(" ").map(n=>n[0]).join("").slice(0,2)}</div>
+        <div><h4>${s.name}</h4><div class="uni-loc">${s.university} · ${s.destination}</div></div>
+      </div>
+      <div class="uni-card-body">
+        <p style="color:var(--ink-soft);font-size:14.5px;line-height:1.7">${s.testimonial}</p>
+      </div>
+    </div>`;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("storiesGrid");
+    const empty = document.getElementById("storiesEmpty");
+    if(SUCCESS_STORIES.length > 0){
+      grid.innerHTML = SUCCESS_STORIES.map(storyCardHTML).join("");
+      empty.style.display = "none";
+      initReveal();
+    } else {
+      grid.style.display = "none";
+    }
+  });
+
+  document.getElementById("storyWaCta").href = waLink("Hi Kalanch Global Education, I'd like to share my success story with you.");
+</script>
+</body>
+</html>

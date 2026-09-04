@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Kalanch Global Education</title>
+<meta name="description" content="Get in touch with Kalanch Global Education by WhatsApp, email, phone, or the message form below.">
+<link rel="icon" type="image/jpeg" href="assets/images/logos/kalanch-logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+
+<div id="site-header"></div>
+
+<div class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Contact Us</span></div>
+    <h1>Contact Us</h1>
+    <p>We're here to help. Reach out via WhatsApp for the fastest response, or use the form below.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 class="section-title">Talk to Our Team</h2>
+      <div style="margin-top:30px;display:flex;flex-direction:column;gap:18px" id="contactDetails">
+        <a href="#" id="contactWaBtn" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block" style="justify-content:flex-start;padding:18px 22px"></a>
+      </div>
+      <div class="stat-strip" style="margin-top:30px" id="contactInfoStrip"></div>
+      <div class="placeholder-note" style="margin-top:20px">Office address, phone number and email shown here are placeholders and will be updated with Kalanch Global Education's official contact details.</div>
+
+      <div style="margin-top:34px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);height:260px;background:var(--paper-tint);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13.5px" id="mapPlaceholder">
+        Google Maps embed will appear here once the office address is confirmed
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="form-card">
+        <h3 style="font-size:22px;color:var(--navy-900);margin-bottom:6px">Send Us a Message</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:26px">We'll get back to you as soon as possible.</p>
+        <form id="contactForm" novalidate>
+          <div class="field" id="cf-name">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" name="name" required>
+            <span class="error-msg">Please enter your name.</span>
+          </div>
+          <div class="field" id="cf-email">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="email" required>
+            <span class="error-msg">Please enter a valid email.</span>
+          </div>
+          <div class="field" id="cf-phone">
+            <label>WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" name="phone" required>
+            <span class="error-msg">Please enter your number.</span>
+          </div>
+          <div class="field" id="cf-message">
+            <label>Message <span class="req">*</span></label>
+            <textarea name="message" required placeholder="Tell us what you'd like help with..."></textarea>
+            <span class="error-msg">Please enter a message.</span>
+          </div>
+          <button type="submit" class="btn btn-navy btn-block">Send Message</button>
+        </form>
+        <div id="contactSuccess" style="display:none" class="success-panel">
+          <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3 style="color:var(--navy-900);font-size:20px">Message Received</h3>
+          <p style="color:var(--muted);margin-top:8px;font-size:14.5px">Thank you. Our team will be in touch shortly. For a faster response, message us directly on WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- B2B PARTNER SECTION -->
+<section class="section-tight" id="partner">
+  <div class="wrap">
+    <div style="background:var(--navy-950);border-radius:24px;padding:64px;color:#fff;position:relative;overflow:hidden" class="reveal">
+      <div style="position:relative;z-index:2;max-width:640px">
+        <span class="tag light">For Organizations</span>
+        <h2 style="color:#fff;font-size:30px;margin-top:18px">Partner With Kalanch Global Education</h2>
+        <p style="color:rgba(255,255,255,.68);margin-top:16px;font-size:15.5px;line-height:1.8">Are you an education consultant, recruitment partner, school, college or international education organization? Partner with Kalanch Global Education to connect students with quality international education opportunities.</p>
+        <a href="#" id="partnerWaCta" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:28px">Become a Partner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const contactWaBtn = document.getElementById("contactWaBtn");
+    contactWaBtn.href = waLink("Hi Kalanch Global Education, I'd like to get in touch regarding studying abroad.");
+    contactWaBtn.innerHTML = ICONS.whatsapp + " WhatsApp Us";
+
+    document.getElementById("contactInfoStrip").innerHTML = `
+      <div><b>${KALANCH_CONFIG.phone}</b><span>Phone</span></div>
+      <div><b>${KALANCH_CONFIG.email}</b><span>Email</span></div>
+      <div><b>Mon–Sat</b><span>Business Hours</span></div>
+    `;
+
+    document.getElementById("partnerWaCta").href = waLink("Hi Kalanch Global Education, I'm interested in exploring a partnership opportunity with your consultancy.");
+  });
+
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if(validateForm(form)){
+      form.style.display = "none";
+      document.getElementById("contactSuccess").style.display = "block";
+    }
+  });
+</script>
+</body>
+</html>

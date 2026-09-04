@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Your Application | Kalanch Global Education</title>
+<meta name="description" content="Submit your profile for a free assessment. Kalanch Global Education will match you with suitable universities and programs.">
+<link rel="icon" type="image/jpeg" href="assets/images/logos/kalanch-logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="application">
+
+<div id="site-header"></div>
+
+<div class="page-header" style="padding-bottom:70px">
+  <div class="wrap text-center">
+    <div class="breadcrumb" style="justify-content:center"><a href="index.html">Home</a> <span>›</span> <span>Start Your Application</span></div>
+    <h1 style="margin:0 auto">Start Your Application</h1>
+    <p style="margin-left:auto;margin-right:auto">Tell us about yourself and your goals. Our team will review your profile and get back to you with tailored guidance.</p>
+  </div>
+</div>
+
+<section class="section-tight">
+  <div class="wrap-narrow">
+    <div class="form-card reveal">
+      <form id="applicationForm" novalidate>
+        <div class="form-grid">
+          <div class="field" id="f-name">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" name="fullName" required>
+            <span class="error-msg">Please enter your full name.</span>
+          </div>
+          <div class="field" id="f-whatsapp">
+            <label>WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" name="whatsapp" placeholder="+92 300 0000000" required>
+            <span class="error-msg">Please enter your WhatsApp number.</span>
+          </div>
+          <div class="field" id="f-email">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="email" required>
+            <span class="error-msg">Please enter a valid email.</span>
+          </div>
+          <div class="field" id="f-country">
+            <label>Country <span class="req">*</span></label>
+            <input type="text" name="country" required>
+            <span class="error-msg">Please enter your country.</span>
+          </div>
+          <div class="field" id="f-age">
+            <label>Age <span class="req">*</span></label>
+            <input type="number" min="14" max="65" name="age" required>
+            <span class="error-msg">Please enter your age.</span>
+          </div>
+          <div class="field" id="f-qualification">
+            <label>Highest Qualification <span class="req">*</span></label>
+            <select name="qualification" required>
+              <option value="">Select...</option>
+              <option>Matric / O-Levels</option>
+              <option>Intermediate / A-Levels</option>
+              <option>Bachelor's Degree</option>
+              <option>Master's Degree</option>
+              <option>Other</option>
+            </select>
+            <span class="error-msg">Please select your qualification.</span>
+          </div>
+          <div class="field" id="f-cgpa">
+            <label>Percentage / CGPA <span class="req">*</span></label>
+            <input type="text" name="cgpa" placeholder="e.g. 3.4 CGPA or 78%" required>
+            <span class="error-msg">Please enter your result.</span>
+          </div>
+          <div class="field" id="f-gradyear">
+            <label>Graduation Year <span class="req">*</span></label>
+            <input type="number" min="1990" max="2035" name="gradYear" placeholder="e.g. 2024" required>
+            <span class="error-msg">Please enter your graduation year.</span>
+          </div>
+          <div class="field" id="f-destination">
+            <label>Preferred Destination <span class="req">*</span></label>
+            <select name="destination" required>
+              <option value="">Select...</option>
+              <option>Malaysia</option>
+              <option>Cyprus</option>
+              <option>Not sure yet</option>
+            </select>
+            <span class="error-msg">Please select a destination.</span>
+          </div>
+          <div class="field" id="f-level">
+            <label>Preferred Study Level <span class="req">*</span></label>
+            <select name="level" required>
+              <option value="">Select...</option>
+              <option>Foundation</option>
+              <option>Diploma</option>
+              <option>Bachelor's</option>
+              <option>Master's</option>
+              <option>PhD</option>
+              <option>Professional Program</option>
+            </select>
+            <span class="error-msg">Please select a study level.</span>
+          </div>
+          <div class="field" id="f-field">
+            <label>Interested Field <span class="req">*</span></label>
+            <input type="text" name="field" placeholder="e.g. Computer Science, Business" required>
+            <span class="error-msg">Please enter your interested field.</span>
+          </div>
+          <div class="field" id="f-intake">
+            <label>Preferred Intake</label>
+            <input type="text" name="intake" placeholder="e.g. February 2027">
+          </div>
+          <div class="field" id="f-budget">
+            <label>Approximate Budget</label>
+            <input type="text" name="budget" placeholder="Optional">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Additional Message</label>
+          <textarea name="message" placeholder="Anything else you'd like us to know?"></textarea>
+        </div>
+
+        <label class="field file" for="docUpload">
+          <input type="file" id="docUpload" name="document" style="display:none">
+          <span style="display:block;font-weight:600;color:var(--navy-900);font-size:14.5px">Document Upload</span>
+          <span style="display:block;font-size:12.8px;color:var(--muted);margin-top:6px" id="fileLabel">Click to attach transcripts, certificates, or ID (optional)</span>
+        </label>
+
+        <button type="submit" class="btn btn-gold btn-block" style="margin-top:12px">Submit My Profile</button>
+      </form>
+
+      <div id="applicationSuccess" style="display:none" class="success-panel">
+        <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3 style="color:var(--navy-900);font-size:22px">Profile Submitted</h3>
+        <p style="color:var(--muted);margin-top:10px;font-size:15px;max-width:420px;margin-left:auto;margin-right:auto">Thank you. Our admissions team will review your profile and reach out shortly. For a faster response, message us directly on WhatsApp.</p>
+        <a href="#" id="appSuccessWa" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-top:24px">Message Us on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const preselectedUni = params.get("university");
+
+  document.getElementById("docUpload").addEventListener("change", (e) => {
+    const label = document.getElementById("fileLabel");
+    label.textContent = e.target.files.length ? e.target.files[0].name : "Click to attach transcripts, certificates, or ID (optional)";
+  });
+
+  const appForm = document.getElementById("applicationForm");
+  appForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if(!validateForm(appForm)) return;
+
+    const data = new FormData(appForm);
+    const name = data.get("fullName");
+    const field = data.get("field");
+    const destination = data.get("destination");
+    const level = data.get("level");
+
+    let msg = `Hi Kalanch Global Education, I have just submitted my profile for a Free Assessment.\nName: ${name}\nInterested Field: ${field}\nPreferred Destination: ${destination}\nPreferred Level: ${level}`;
+    if(preselectedUni) msg += `\nUniversity of Interest: ${preselectedUni}`;
+
+    document.getElementById("appSuccessWa").href = waLink(msg);
+    appForm.style.display = "none";
+    document.getElementById("applicationSuccess").style.display = "block";
+
+    // Structure kept simple so an API / email / CRM integration can be
+    // connected here later without changing the form markup above.
+  });
+
+  if(preselectedUni){
+    const note = document.createElement("div");
+    note.className = "placeholder-note";
+    note.style.marginBottom = "24px";
+    note.textContent = `You're applying with interest in: ${preselectedUni}`;
+    appForm.parentNode.insertBefore(note, appForm);
+  }
+</script>
+</body>
+</html>

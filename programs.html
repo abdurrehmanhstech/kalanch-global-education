@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs | Kalanch Global Education</title>
+<meta name="description" content="Browse study programs by field, including business, computing, engineering and health sciences, and see which universities offer them.">
+<link rel="icon" type="image/jpeg" href="assets/images/logos/kalanch-logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="programs">
+
+<div id="site-header"></div>
+
+<div class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Programs</span></div>
+    <h1>Programs</h1>
+    <p>Explore programs by field of study. Select a category to see which universities in our network offer related programs, and enquire directly via WhatsApp.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid-3" id="programGrid"></div>
+  </div>
+</section>
+
+<section class="section-tight" style="background:var(--paper-soft)">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <h3>Don't see the exact program you're looking for?</h3>
+        <p>Tell us your subject of interest and preferred destination, and we'll help you find a fit.</p>
+      </div>
+      <div class="btn-row">
+        <a href="#" id="progWaCta" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- Program detail overlay -->
+<div id="programOverlay">
+  <div class="program-detail-panel" id="programDetail"></div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/universities.js"></script>
+<script src="js/programs.js"></script>
+<script>
+  document.getElementById("progWaCta").href = waLink("Hi Kalanch Global Education, I'd like guidance finding a program that fits my interests and goals.");
+</script>
+</body>
+</html>
